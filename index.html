@@ -1,75 +1,104 @@
-<style>
-  .custom-form {
-    max-width: 400px;           /* form width */
-    margin: 20px auto;          /* center form */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  .custom-form h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #333;
-  }
-  .custom-form input,
-  .custom-form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;        /* space between fields */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
-  .custom-form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  .custom-form button:hover {
-    background-color: #45a049;
-  }
-  .thank-you {
-    display: none;
-    margin-top: 15px;
-    color: #4CAF50;
-    font-weight: bold;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscribe Form</title>
+  <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .form-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h3 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .btn-subscribe {
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+    }
+    .btn-subscribe:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container">
+    <div class="form-container">
+      <h3>Subscribe to our Newsletter</h3>
 
-<form class="custom-form" 
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfCcnNmQfo2PqUhjXAMIrFHTf1IGxA7DfRHQN3YgVnOBedz5A/formResponse" 
-      method="POST" target="hidden_iframe" onsubmit="showThankYou()">
-  
-  <h2>Subscribe to our Newsletter</h2>
-  
-  <input type="text" name="entry.1318698601" placeholder="Name" required>
-  
-  <input type="text" name="entry.2092102041" placeholder="Last Name" required>
-  
-  <input type="email" name="entry.1521693795" placeholder="Email" required>
-  
-  <input type="text" name="entry.1095826130" placeholder="Phone number">
-  
-  <button type="submit">Submit</button>
-  
-  <div class="thank-you" id="thankYouMsg">
-    ✅ Thank you! You’ve successfully subscribed.
+      <!-- FORM -->
+      <form
+        action="https://docs.google.com/forms/d/e/1FAIpQLSfCcnNmQfo2PqUhjXAMIrFHTf1IGxA7DfRHQN3YgVnOBedz5A/formResponse"
+        method="POST"
+        target="hidden_iframe"
+      >
+        <!-- Name -->
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="entry.2005620554"
+            placeholder="First Name"
+            required
+          />
+        </div>
+        <!-- Last Name -->
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="entry.1625289766"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="email"
+            name="entry.1045781291"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <!-- Phone Number -->
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="entry.1166974658"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-subscribe btn-block">
+          Subscribe
+        </button>
+      </form>
+      <!-- Hidden iframe -->
+      <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display:none;"
+      ></iframe>
+    </div>
   </div>
-</form>
-
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-  function showThankYou() {
-    // show thank-you message after submit
-    setTimeout(function() {
-      document.getElementById('thankYouMsg').style.display = 'block';
-    }, 500);
-  }
-</script>
+</body>
+</html>
