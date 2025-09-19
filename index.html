@@ -1,0 +1,47 @@
+<style>
+  .custom-form {
+    max-width: 400px;           /* form width */
+    margin: 20px auto;          /* center form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  .custom-form input,
+  .custom-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;        /* space between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .custom-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .custom-form button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<form class="custom-form" 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfCcnNmQfo2PqUhjXAMIrFHTf1IGxA7DfRHQN3YgVnOBedz5A/formResponse" 
+      method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  
+  <input type="text" name="entry.1318698601" placeholder="Name" required>
+  
+  <input type="text" name="entry.2092102041" placeholder="Last Name" required>
+  
+  <input type="email" name="entry.1521693795" placeholder="Email" required>
+  
+  <input type="text" name="entry.1095826130" placeholder="Phone number">
+  
+  <button type="submit">Submit</button>
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
