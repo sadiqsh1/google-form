@@ -7,6 +7,12 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .custom-form h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
   }
   .custom-form input,
   .custom-form button {
@@ -27,11 +33,19 @@
   .custom-form button:hover {
     background-color: #45a049;
   }
+  .thank-you {
+    display: none;
+    margin-top: 15px;
+    color: #4CAF50;
+    font-weight: bold;
+  }
 </style>
 
 <form class="custom-form" 
       action="https://docs.google.com/forms/d/e/1FAIpQLSfCcnNmQfo2PqUhjXAMIrFHTf1IGxA7DfRHQN3YgVnOBedz5A/formResponse" 
-      method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      method="POST" target="hidden_iframe" onsubmit="showThankYou()">
+  
+  <h2>Subscribe to our Newsletter</h2>
   
   <input type="text" name="entry.1318698601" placeholder="Name" required>
   
@@ -41,7 +55,20 @@
   
   <input type="text" name="entry.1095826130" placeholder="Phone number">
   
-  <button type="submit">Submit</button>
+  <button type="submit">Subcribe</button>
+  
+  <div class="thank-you" id="thankYouMsg">
+    ✅ Thank you! You’ve successfully subscribed.
+  </div>
 </form>
 
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  function showThankYou() {
+    // hide form fields and show thank you message after submit
+    setTimeout(function() {
+      document.getElementById('thankYouMsg').style.display = 'block';
+    }, 500); // show message after half a second
+  }
+</script>
